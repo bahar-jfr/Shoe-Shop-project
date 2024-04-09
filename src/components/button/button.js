@@ -5,7 +5,7 @@ export function Button(text, id) {
     element: "button",
     id,
     className:
-      "py-3 px-4 bg-blue_charcoal text-white rounded-xxl cursor-pointer disabled:opacity-65",
+      "py-3 px-4 bg-blue_charcoal text-white rounded-xxl cursor-pointer disabled:opacity-65 w-full",
     innerText: text,
     disabled: true,
   });
