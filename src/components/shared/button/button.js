@@ -1,4 +1,4 @@
-import { El } from "../../utils/shared/El";
+import { El } from "../../../utils/shared/El";
 
 export function Button(text, id) {
   return El({

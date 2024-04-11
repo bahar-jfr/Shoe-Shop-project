@@ -1,5 +1,5 @@
-import { Router } from "../../routes/routes";
-import { El } from "../../utils/shared/El";
+import { Router } from "../../../routes/routes";
+import { El } from "../../../utils/shared/El";
 
 const actionVariables = {
   Home: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="#212529" stroke="#212529" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M80 212v236a16 16 0 0 0 16 16h96V328a24 24 0 0 1 24-24h80a24 24 0 0 1 24 24v136h96a16 16 0 0 0 16-16V212"/><path fill="#212529" stroke="#212529" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M480 256L266.89 52c-5-5.28-16.69-5.34-21.78 0L32 256m368-77V64h-48v69"/></svg>
@@ -17,13 +17,24 @@ const actionVariables = {
 export function ActionIcon(item) {
   return El({
     element: "div",
-    id: item,
-    innerHTML: actionVariables[item],
-    eventListener:[
-        {
-            event: "click",
-            callback : ()=> Router().navigate(`/${item.toLowerCase()}`)
-        }
-    ]
+    className: "flex flex-col items-center ",
+    children: [
+      El({
+        element: "div",
+        id: item,
+        innerHTML: actionVariables[item],
+      }),
+      El({
+        element: "p",
+        className: "text-xs font-semibold text-blue_tangaroa",
+        innerText: item,
+      }),
+    ],
+    eventListener: [
+      {
+        event: "click",
+        callback: () => Router().navigate(`/${item.toLowerCase()}`),
+      },
+    ],
   });
 }

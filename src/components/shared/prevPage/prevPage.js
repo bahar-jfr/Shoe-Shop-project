@@ -1,6 +1,6 @@
-import { El } from "../../utils/shared/El";
+import { El } from "../../../utils/shared/El";
 
-export function PrevPage(title="") {
+export function PrevPage(title = "") {
   return El({
     element: "div",
     className: "flex items-center py-3",
@@ -17,7 +17,8 @@ export function PrevPage(title="") {
       }),
       El({
         element: "p",
-        className: "text-xl pl-3   font-semibold w-fit h-8 text-tangaroa flex items-center",
+        className:
+          "text-xl pl-3   font-semibold w-fit h-8 text-blue_tangaroa flex items-center",
         innerText: title,
       }),
     ],
