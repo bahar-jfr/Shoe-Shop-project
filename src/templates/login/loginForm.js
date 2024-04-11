@@ -1,4 +1,4 @@
-import { FormInput } from "../../components/formInput/formInput";
+import { FormInput } from "../../components/shared/formInput/formInput";
 import { El } from "../../utils/shared/El";
 
 export function loginForm() {
@@ -17,7 +17,7 @@ export function loginForm() {
       }),
       El({
         element: "h1",
-        className: "font-semibold text-xl text-tangaroa text-center px-3 ",
+        className: "font-semibold text-xl text-blue_tangaroa text-center px-3 ",
         innerText: "Login to Your Acount",
       }),
       El({
@@ -25,7 +25,6 @@ export function loginForm() {
         className: "flex flex-col gap-4 mt-12 mb-10",
         children: [FormInput("Email", "Empty"), FormInput("Password", "Eye")],
       }),
- 
     El({
       element: "form",
       className: "flex items-center justify-center gap-2 mb-68",
