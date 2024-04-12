@@ -1,12 +1,12 @@
 import { getProducts } from "../../api/get/getProducts";
 import { BrandLogo } from "../../components/HOME/brandLogo/brandLogo";
 import { FormInput } from "../../components/shared/formInput/formInput";
-import { renderAllProducts } from "../../utils/functions/render/renderAllProducts";
+import { renderProducts } from "../../utils/functions/render/renderProducts";
 import { El } from "../../utils/shared/El";
 
 export function homeSections() {
   getProducts().then((res) => {
-    renderAllProducts(res.data);
+    renderProducts(res.data,"allProducts");
   });
   return El({
     element: "div",
@@ -29,9 +29,12 @@ export function homeSections() {
         ],
       }),
       El({
+
+      }),
+      El({
         element: "div",
         className:"flex flex-wrap gap-4 overflow-hidden mb-10 pb-12",
-        id: "cardContainer",
+        id: "allProducts",
       }),
     ],
   });
