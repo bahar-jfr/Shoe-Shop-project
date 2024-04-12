@@ -2,7 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: "Inter";
+}
 
-*{
-    font-family: "Inter";
+.line-clamp-4 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* truncate to 4 lines */
+  -webkit-line-clamp: 2;
 }
