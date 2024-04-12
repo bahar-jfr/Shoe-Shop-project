@@ -1,12 +1,19 @@
+import { Router } from "../../../routes/routes";
 import { El } from "../../../utils/shared/El";
 
-export function PrevPage(title = "") {
+export function PrevPage(title = "", route) {
   return El({
     element: "div",
-    className: "flex items-center py-3",
+    className: "flex items-center py-4",
     children: [
       El({
         element: "div",
+        eventListener: [
+          {
+            event: "click",
+            callback: () => Router().navigate(`/${route}`),
+          },
+        ],
         children: [
           El({
             element: "img",
@@ -18,7 +25,7 @@ export function PrevPage(title = "") {
       El({
         element: "p",
         className:
-          "text-xl pl-3   font-semibold w-fit h-8 text-blue_tangaroa flex items-center",
+          "text-lg pl-3 font-semibold w-fit text-blue_tangaroa flex items-center",
         innerText: title,
       }),
     ],
