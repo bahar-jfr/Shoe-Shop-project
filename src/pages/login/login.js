@@ -1,13 +1,9 @@
-import { Button } from "../../components/button/button";
-import { PrevPage } from "../../components/prevPage/prevPage";
+import { Button } from "../../components/shared/button/button";
+import { PrevPage } from "../../components/shared/prevPage/prevPage";
 import { Layout } from "../../layouts/layout";
 import { loginForm } from "../../templates/login/loginForm";
-import { El } from "../../utils/shared/El";
 
 export function login() {
-  return El({
-    element: "div",
-    className: "flex flex-col px-6 h-screen",
-    children: [Layout(PrevPage(), loginForm(), Button("Sign In", "signIn"))],
-  });
+  const style = "flex flex-col px-6 h-screen";
+  return Layout(PrevPage(), loginForm(),true, Button("Sign In", "signIn",true,"blue_charcoal","none","none","none"), style);
 }
