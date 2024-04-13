@@ -5,5 +5,5 @@ import { loginForm } from "../../templates/login/loginForm";
 
 export function login() {
   const style = "flex flex-col px-6 h-screen";
-  return Layout(PrevPage(), loginForm(),true, Button("Sign In", "signIn",true,"blue_charcoal","none","none","none"), style);
+  return Layout(PrevPage(), loginForm(),true, Button("Sign In", "signIn",true,"blue","none","none","none"), style);
 }

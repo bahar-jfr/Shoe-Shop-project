@@ -7,10 +7,11 @@ const iconVariables = {
 };
 
 export function Button(text, id, bool, color, size, iconR, iconL) {
+  const colorVar = {blue: "bg-blue_charcoal", black : "bg-black"}
   return El({
     element: "button",
     id,
-    className: `py-3 bg-${color} text-white rounded-xxl cursor-pointer disabled:opacity-65 w-full shadow-${size} flex justify-center items-center gap-3`,
+    className: `py-3 ${colorVar[color]} text-white rounded-xxl cursor-pointer disabled:opacity-65 w-full shadow-${size} flex justify-center items-center gap-3`,
     children: [
       El({
         element: "span",
