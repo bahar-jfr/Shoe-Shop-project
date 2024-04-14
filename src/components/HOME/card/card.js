@@ -1,9 +1,19 @@
+import { showSingelProduct } from "../../../utils/functions/showSingelProduct/showSingelProduct";
 import { El } from "../../../utils/shared/El";
 
-export function Card(imageURL,name ,price) {
+export function Card(id, imageURL, name, price) {
   return El({
     element: "div",
+    id: `${id}`,
     className: "flex flex-col gap-3 w-46",
+    eventListener: [
+      {
+        event: "click",
+        callback: (e) => {
+            showSingelProduct(e.currentTarget.id);
+        },
+      },
+    ],
     children: [
       El({
         element: "img",
@@ -11,7 +21,7 @@ export function Card(imageURL,name ,price) {
         src: imageURL,
       }),
       El({
-        element: "h3",
+        element: "h4",
         innerText: name,
         className: "truncate text-blue_tangaroa  font-bold text-lg",
       }),

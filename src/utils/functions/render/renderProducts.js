@@ -5,6 +5,6 @@ export function renderProducts(products, id) {
   // Reset
   cardContainer.innerHTML = "";
   products.map((item) => {
-    cardContainer.append(Card(item.imageURL, item.name, item.price));
+    cardContainer.append(Card(item.id,item.imageURL, item.name, item.price));
   });
 }
