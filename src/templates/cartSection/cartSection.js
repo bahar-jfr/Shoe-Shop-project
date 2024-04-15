@@ -5,12 +5,9 @@ import { El } from "../../utils/shared/El";
 
 export  function cartSection() {
     get("users").then((res) => {
-    renderCartItems(res.data[0].orders, "cartItems");
+    renderCartItems(res.data[0].cart, "cartItems");
   });
-  let ordersProducts =  get("users").then((res) => {
-    return res.data[0].orders;
-  });
-  console.log(ordersProducts);
+
   return El({
     element: "div",
     className:"mb-44",
@@ -35,9 +32,9 @@ export  function cartSection() {
               }),
               El({
                 element: "p",
-                id: "totalPriceProduct",
+                id: "totalPriceCart",
                 className: "text-lg font-bold text-blue_tangaroa",
-                innerText: "$0.00",
+                innerText: 0,
               }),
             ],
           }),
@@ -54,7 +51,7 @@ export  function cartSection() {
                 "arrow",
                 "none",
                 "check",
-                ordersProducts
+                ""
               ),
             ],
           }),

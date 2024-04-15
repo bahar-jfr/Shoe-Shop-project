@@ -18,10 +18,19 @@ export async function counter(element, product) {
   const arrayOfOrders = await get("users").then((res) => {
     return res.data[0];
   });
+  
   if (location.pathname === "/cart") {
-    let findItem = arrayOfOrders.orders.find((item) => item.id == product.id);
+    const findItem = arrayOfOrders.cart.find((item) => item.id == product.id);
     findItem.quantity = product.quantity;
     findItem.totalPrice = product.totalPrice;
-    set(arrayOfOrders)
+
+    const totalPriceCart = document.getElementById("totalPriceCart");
+    let sum = 0;
+    arrayOfOrders.cart.forEach((item) => {
+      sum += parseFloat(item.totalPrice.slice(1));
+    });
+    totalPriceCart.innerText = sum.toFixed(2);
+
+    set(arrayOfOrders);
   }
 }
