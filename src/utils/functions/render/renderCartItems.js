@@ -7,7 +7,7 @@ export function renderCartItems(products, id) {
   // Reset
   cartItems.innerHTML = "";
   products.map((item) => {
-    cartItems.append(Card(item));
+    cartItems.append(Card(item, "trash"));
 
     const totalPriceCart = document.getElementById("totalPriceCart");
     let sum = 0;
