@@ -1,4 +1,5 @@
 import { get } from "../../api/get/get";
+import { Overlay } from "../../components/CART/overlay/overlay";
 import { Button } from "../../components/shared/button/button";
 import { renderCartItems } from "../../utils/functions/render/renderCartItems";
 import { El } from "../../utils/shared/El";
@@ -19,7 +20,7 @@ export  function cartSection() {
       }),
       El({
         element: "div",
-        className: "flex items-center gap-8 justify-center fixed w-full left-1/2 -translate-x-1/2 bottom-15 bg-white py-6 border-t-2 border-gray rounded-t-3xl",
+        className: "flex items-center gap-8 justify-center fixed w-full left-1/2 -translate-x-1/2 bottom-15 bg-white px-4 py-6 border-t-2 border-gray rounded-t-3xl",
         children: [
           El({
             element: "div",
@@ -47,11 +48,11 @@ export  function cartSection() {
                 "Checkout",
                 false,
                 "black",
+                "white",
+                "3",
                 "xl",
                 "arrow",
                 "none",
-                "check",
-                ""
               ),
             ],
           }),
