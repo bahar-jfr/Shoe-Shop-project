@@ -19,6 +19,6 @@ export async function addToCart(item) {
     return res.data[0];
   });
 
-  arrayOfOrders.orders.push(choosenProduct);
+  arrayOfOrders.cart.push(choosenProduct);
   set(arrayOfOrders);
 }

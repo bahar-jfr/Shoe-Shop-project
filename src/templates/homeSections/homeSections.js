@@ -1,12 +1,12 @@
-import { getProducts } from "../../api/get/getProducts";
+import { get } from "../../api/get/get";
 import { BrandLogo } from "../../components/HOME/brandLogo/brandLogo";
 import { FormInput } from "../../components/shared/formInput/formInput";
 import { renderProducts } from "../../utils/functions/render/renderProducts";
 import { El } from "../../utils/shared/El";
 
 export function homeSections() {
-  getProducts().then((res) => {
-    renderProducts(res.data,"allProducts");
+  get("products").then((res) => {
+    renderProducts(res.data, "allProducts");
   });
   return El({
     element: "div",
@@ -28,12 +28,10 @@ export function homeSections() {
           BrandLogo("More .. ", 4, 5, 2, 3),
         ],
       }),
-      El({
-
-      }),
+      El({}),
       El({
         element: "div",
-        className:"flex flex-wrap gap-4 overflow-hidden mb-10 pb-12",
+        className: "flex flex-wrap gap-4 overflow-hidden mb-10 pb-12",
         id: "allProducts",
       }),
     ],

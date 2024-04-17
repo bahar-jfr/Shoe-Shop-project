@@ -1,9 +1,9 @@
-import { getProducts } from "../../api/get/getProducts";
+import { get } from "../../api/get/get";
 import { renderProducts } from "../../utils/functions/render/renderProducts";
 import { El } from "../../utils/shared/El";
 
 export function products(brand) {
-  getProducts().then((res) => {
+  get("products").then((res) => {
     const arrayOfData = res.data;
     const filteredProducts = arrayOfData.filter((item) => item.brand === brand);
     renderProducts(filteredProducts, "brandProducts");
