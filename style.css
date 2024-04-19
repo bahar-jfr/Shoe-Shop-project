@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: inter, serif;
+  src: url("./src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
 * {
   font-family: "Inter";
 }
@@ -12,4 +17,13 @@
   -webkit-box-orient: vertical;
   /* truncate to 4 lines */
   -webkit-line-clamp: 2;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

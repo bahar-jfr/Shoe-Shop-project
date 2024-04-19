@@ -9,7 +9,8 @@ export default {
         dark_gray : "#757475",
         light_gray: "#FAFAFA",
         medium_gray :"#F3F3F3",
-        gray : "#ECECEC"
+        gray : "#ECECEC",
+        light_black : "#333"
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
