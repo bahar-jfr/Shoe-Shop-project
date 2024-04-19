@@ -1,6 +1,6 @@
 import { El } from "../../../utils/shared/El";
 
-export function NoProduct() {
+export function NoProduct(title,description) {
   return El({
     element: "div",
     className:"flex items-center justify-center pt-24",
@@ -18,11 +18,12 @@ export function NoProduct() {
           El({
             element: "p",
             className: "text-xmd font-semibold",
-            innerText: "You don't have an order yet",
+            innerText:title,
           }),
           El({
             element: "p",
-            innerText: "You don't have an active orders at this time ",
+            className:"text-center",
+            innerText:description,
           }),
         ],
       }),
