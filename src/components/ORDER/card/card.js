@@ -8,7 +8,7 @@ export function Card(item,text) {
         El({
           element: "img",
           className: "h-32 w-32 rounded-2xl",
-          src: item.image,
+          src: item.imageURL,
         }),
         El({
           element: "div",
