@@ -1,6 +1,15 @@
 export const Main_Route = "/";
 export const Login_Route = "/login";
 export const Home_Route = "/home";
+export const Search_Route = "/search"
 export const Whish_Route = "/whishlist";
 export const Cart_Route = "/cart";
-export const Singel_Route = "/singelproduct"
+export const Orders_Route = "/orders";
+export const Singel_Route = "/singelproduct";
+export const Check_Route = "/checkout";
+export const ShippingAdd_Route = "/shippingaddress";
+export const ShippingType_Route = "/shippingtype";
+export const OnboardOne_Route = "/onboardingone"
+export const OnboardTwo_Route = "/onboardingtwo"
+export const Slider_Route = "/slider"
+export const pay_route = "/payment"
