@@ -17,7 +17,7 @@ const actionVariables = {
 export function ActionIcon(item) {
   return El({
     element: "div",
-    className: "flex flex-col items-center ",
+    className: "flex flex-col items-center cursor-pointer",
     children: [
       El({
         element: "div",

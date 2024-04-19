@@ -1,6 +1,9 @@
 import { get } from "../../api/get/get";
 import { BrandLogo } from "../../components/HOME/brandLogo/brandLogo";
 import { FormInput } from "../../components/shared/formInput/formInput";
+import { ScrollBar } from "../../components/shared/scrollBar/scrollBar";
+import { Router } from "../../routes/routes";
+import { filterBrand } from "../../utils/functions/filterBrand/filterBrand";
 import { renderProducts } from "../../utils/functions/render/renderProducts";
 import { El } from "../../utils/shared/El";
 
@@ -12,7 +15,16 @@ export function homeSections() {
     element: "div",
     className: "flex flex-col",
     children: [
-      FormInput("Search", "Empty"),
+      El({
+        element: "div",
+        eventListener: [
+          {
+            event: "click",
+            callback: () =>   Router().navigate("/search"),
+          },
+        ],
+        children: [FormInput("Search","searchHome", "Empty")],
+      }),
       El({
         element: "div",
         className:
@@ -28,7 +40,51 @@ export function homeSections() {
           BrandLogo("More .. ", 4, 5, 2, 3),
         ],
       }),
-      El({}),
+      El({
+        element: "div",
+        className: "flex flex-col",
+        children: [
+          El({
+            element: "div",
+            className:
+              "flex items-center justify-between text-blue_tangaroa pt-5",
+            children: [
+              El({
+                element: "p",
+                className: "text-xmd font-semibold",
+                innerText: "Most PoPular",
+              }),
+              El({
+                element: "p",
+                className: "text-md font-semibold",
+                innerText: "See All",
+              }),
+            ],
+          }),
+          El({
+            element: "div",
+            eventListener: [
+              {
+                event: "click",
+                callback: (e) =>
+                  filterBrand(e, "products", "allProducts"),
+              },
+            ],
+            className:
+              "flex items-center gap-3 overflow-y-hidden no-scrollbar pb-5 pt-5",
+            children: [
+              ScrollBar("All"),
+              ScrollBar("Nike"),
+              ScrollBar("Adidas"),
+              ScrollBar("Puma"),
+              ScrollBar("Asics"),
+              ScrollBar("Reebok"),
+              ScrollBar("NewBalance"),
+              ScrollBar("Converse"),
+            ],
+          }),
+        ],
+      }),
       El({
         element: "div",
         className: "flex flex-wrap gap-4 overflow-hidden mb-10 pb-12",

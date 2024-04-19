@@ -1,13 +1,14 @@
 import { get } from "../../api/get/get";
 import { ShippingCard } from "../../components/CHECKOUT/shippingCard/shippingCard";
 import { Button } from "../../components/shared/button/button";
+import { Router } from "../../routes/routes";
 import { renderCheckItems } from "../../utils/functions/render/renderCheckItems";
 import { El } from "../../utils/shared/El";
 
 export function checkoutSection() {
   return El({
     element: "div",
-    className:"pb-10",
+    className: "pb-10",
     children: [
       El({
         element: "div",
@@ -21,7 +22,13 @@ export function checkoutSection() {
           El({
             element: "div",
             id: "shippingItems",
-            children: [ShippingCard("edit")],
+            children: [ShippingCard("Home", "edit")],
+            eventListener: [
+              {
+                event: "click",
+                callback: () => Router().navigate("/shippingaddress"),
+              },
+            ],
           }),
         ],
       }),
@@ -84,6 +91,12 @@ export function checkoutSection() {
               }),
               El({
                 element: "span",
+                eventListener: [
+                  {
+                    event: "click",
+                    callback: () => Router().navigate("/shippingtype"),
+                  },
+                ],
                 innerHTML: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1024 1024"><path fill="black" d="M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512L340.864 831.872a30.59 30.59 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z"/></svg>`,
               }),
             ],
@@ -137,7 +150,7 @@ export function checkoutSection() {
                   El({
                     element: "p",
                     className: "w-1/2 flex justify-end",
-                    id:"amountPrice",
+                    id: "amountPrice",
                     innerText: "$585.00",
                   }),
                 ],
@@ -184,17 +197,28 @@ export function checkoutSection() {
             element: "hr",
             className: "text-gray mb-5",
           }),
-          Button(
-            "Continue to Payment",
-            "continuePayment",
-            false,
-            "black",
-            "white",
-            "4",
-            "xl",
-            "arrow",
-            "none"
-          ),
+          El({
+            element: "div",
+            eventListener: [
+              {
+                event: "click",
+                callback: () => Router().navigate("/payment"),
+              },
+            ],
+            children: [
+              Button(
+                "Continue to Payment",
+                "continuePayment",
+                false,
+                "black",
+                "white",
+                "4",
+                "xl",
+                "arrow",
+                "none"
+              ),
+            ],
+          }),
         ],
       }),
     ],

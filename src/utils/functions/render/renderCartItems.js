@@ -6,12 +6,12 @@ export function renderCartItems(products, id) {
 
   // Reset
   cartItems.innerHTML = "";
-  products.map((item) => {
+  products.cart.map((item) => {
     cartItems.append(Card(item, "trash"));
 
     const totalPriceCart = document.getElementById("totalPriceCart");
     let sum = 0;
-    products.forEach((e) => {
+    products.cart.forEach((e) => {
       sum += parseFloat(e.totalPrice.slice(1));
     });
     totalPriceCart.innerText = sum.toFixed(2);

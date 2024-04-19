@@ -12,6 +12,6 @@ export async function confirmDelete(item) {
   console.log(arrayOfOrders);
   setDeleted(arrayOfOrders);
 
-    renderCartItems(arrayOfOrders.cart, "cartItems");
+    renderCartItems(arrayOfOrders, "cartItems");
   
 }

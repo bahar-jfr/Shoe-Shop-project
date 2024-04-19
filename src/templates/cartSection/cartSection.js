@@ -1,12 +1,13 @@
 import { get } from "../../api/get/get";
 import { Overlay } from "../../components/CART/overlay/overlay";
 import { Button } from "../../components/shared/button/button";
+import { Router } from "../../routes/routes";
 import { renderCartItems } from "../../utils/functions/render/renderCartItems";
 import { El } from "../../utils/shared/El";
 
 export  function cartSection() {
     get("users").then((res) => {
-    renderCartItems(res.data[0].cart, "cartItems");
+    renderCartItems(res.data[0], "cartItems");
   });
 
   return El({
@@ -42,6 +43,12 @@ export  function cartSection() {
           El({
             element: "div",
             className:"w-4/6 rounded-xxl shadow-xl ",
+            eventListener:[
+              {
+                event: "click",
+                callback: ()=> Router().navigate("/checkout")
+              }
+            ],
             children: [
               Button(
                 "Checkout",

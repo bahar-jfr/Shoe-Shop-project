@@ -1,3 +1,4 @@
+import { Router } from "../../routes/routes";
 import { El } from "../../utils/shared/El";
 
 export function userInfo() {
@@ -29,7 +30,7 @@ export function userInfo() {
                 innerText: "Good Morning 👋",
               }),
               El({
-                element: "h2",
+                element: "p",
                 className: "text-blue_tangaroa font-bold",
                 innerText: "Bahar Jafarimehr",
               }),
@@ -47,6 +48,12 @@ export function userInfo() {
           }),
           El({
             element: "img",
+            eventListener:[
+              {
+                event:"click",
+                callback:()=> Router().navigate("/whishlist")
+              }
+            ],
             src: "./src/assets/icons/heart.svg",
           }),
         ],

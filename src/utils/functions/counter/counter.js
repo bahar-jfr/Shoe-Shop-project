@@ -1,5 +1,5 @@
 import { get } from "../../../api/get/get";
-import { set } from "../../../api/set/set";
+import { set, setFromCart } from "../../../api/set/set";
 
 export async function counter(element, product) {
   let countNum = document.getElementById(`num${product.id}`);
@@ -20,6 +20,7 @@ export async function counter(element, product) {
   });
   
   if (location.pathname === "/cart") {
+    console.log(arrayOfOrders);
     const findItem = arrayOfOrders.cart.find((item) => item.id == product.id);
     findItem.quantity = product.quantity;
     findItem.totalPrice = product.totalPrice;
@@ -31,6 +32,6 @@ export async function counter(element, product) {
     });
     totalPriceCart.innerText = sum.toFixed(2);
 
-    set(arrayOfOrders);
+    setFromCart(arrayOfOrders);
   }
 }
